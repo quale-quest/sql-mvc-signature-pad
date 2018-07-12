@@ -1,0 +1,22 @@
+{
+  "name": "sql-mvc-signature-pad",
+  "version": "0.0.1",
+  "description": "Installable UI widgit for signatures for sql-mvc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quale-quest/sql-mvc-signature-pad.git"
+  },
+  "keywords": [
+    "sql-mvc"
+  ],
+  "author": "Lafras",
+  "license": "Commercial Open Source",
+  "bugs": {
+    "url": "https://github.com/quale-quest/sql-mvc-signature-pad/issues"
+  },
+  "homepage": "https://github.com/quale-quest/sql-mvc-signature-pad"
+}

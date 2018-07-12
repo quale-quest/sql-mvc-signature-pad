@@ -1,0 +1,7 @@
+
+<#model
+
+--:{class:signaturepad,Action:View,Type:SignaturePad,width:128,Button:"Upload File",widget:{DisplayName:NAME,Target:public},Async:{ namefield:"replace:/([\\w_$]+)//$1", filefield:"replace:/([\\w_$]+)//$1_FILENAME",somestuff:1, Target:public}}  
+
+#>
+
