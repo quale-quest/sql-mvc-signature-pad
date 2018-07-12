@@ -59,8 +59,11 @@ function signature_pad_dataURLToBlob(dataURL) {
 
 
 function signature_pad_init(DownloadOrUpload) {
-	signature_pad.DownloadOrUpload = DownloadOrUpload||'Upload';
+	
 	signature_pad_wrapper = document.getElementById("signature-pad");
+	if (!signature_pad_wrapper) return;
+	
+	signature_pad.DownloadOrUpload = DownloadOrUpload||'Upload';
 	signature_pad.clearButton = signature_pad_wrapper.querySelector("[data-action=clear]");
 	signature_pad.savePNGButton = signature_pad_wrapper.querySelector("[data-action=save-png]");
 	signature_pad.canvas = signature_pad_wrapper.querySelector("canvas");
@@ -120,6 +123,7 @@ signature_pad.savePNGButton.addEventListener("click", function (event) {
 				console.log('savePNGButton : success :',return_data);					
 				//todo better handle 'File To Large' error sent from app_uploads.js - for now simply alert
 				if (return_data=='{"message": "File To Large"}' )alert("File To Large");
+				zxnav_reload();
 			}
 
 		});
