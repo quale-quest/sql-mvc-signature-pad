@@ -4,14 +4,15 @@
 exports.name= 'signature_pad_plugin'; 
 var sst;          
 
-var parse_json_attributes = function (cx,attr) {
+var unpack_elements = function (cx,attr) {
+	//decodes the content sent by the 'repack' function used in an element
     cx.f = {};
     if (attr !== undefined) {        
         var jsonobj = '{' + attr + '}';
         try {
             cx.f = JSON.parse(jsonobj);
         } catch (e) {
-            console.log('parse_json_attributes failed:', e);
+            console.log('unpack_elements failed:', e);
         }
         //console.log('cx.obj.Data.pick vals:',cx.f);
     }
@@ -38,7 +39,7 @@ exports.init_client_plugin_mt_functions = function (obj,ss_tmpl) {
 				var items = ths[0].split(",");
 				if (ths[0] === "")
 					items = [];
-                parse_json_attributes(lcx,ths[4]);
+                unpack_elements(lcx,ths[4]);
                 lcx.Session=ctx[0].Session;
 				//console.log('lobj.Data.pick obj:',qq_session,qq_Stash);
 

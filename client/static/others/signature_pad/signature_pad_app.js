@@ -123,7 +123,9 @@ signature_pad.savePNGButton.addEventListener("click", function (event) {
 				console.log('savePNGButton : success :',return_data);					
 				//todo better handle 'File To Large' error sent from app_uploads.js - for now simply alert
 				if (return_data=='{"message": "File To Large"}' )alert("File To Large");
-				zxnav_reload();
+				setTimeout(function() {
+					zxnav_reload(); //delay the reload so it will load the new image not the old
+				}, 900);
 			}
 
 		});
